@@ -12,18 +12,18 @@ export class Player {
 
   constructor() {
     this.name = 'Player ' + this.id;
-    this.createStartingHand();
+    this.createStartingDeck();
     this.drawHand();
   }
 
-  private createStartingHand(): void {
+  private createStartingDeck(): void {
     this.deck.push(new TakeOneCoin());
     this.deck.push(new TakeOneCoin());
     this.deck.push(new TakeOneCoin());
     this.deck.push(new TakeOneCoin());
   }
 
-  async go(game: Game) {
+  public async go(game: Game) {
     console.log(this.name);
     this.playHand(game);
     this.drawHand();
@@ -32,6 +32,7 @@ export class Player {
   private playHand(game: Game): void {
     this.hand.forEach((card) => {
       card.play(this, game);
+      this.discardPile.push(card);
     });
     this.hand = [];
   }
