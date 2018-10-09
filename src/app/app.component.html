@@ -1,3 +1,25 @@
 <h1>
   {{title}}
 </h1>
+
+
+<p>
+  <h2>
+    Bank
+  </h2>
+  coins: {{game.bank.money}}
+<p>
+
+<p>
+  <h2>Available Cards</h2>
+  Take one coin: {{countTakeOneCoin()}} <br>
+  Take two coins: {{countTakeTwoCoins()}} <br>
+  Make an opponent drop a coin: {{countMakeAnOpponentDropACoin()}}
+<p>
+
+  <span [hidden]="game.isDone()">
+    <h2>Game is done!</h2>
+  </span>
+
+
+
