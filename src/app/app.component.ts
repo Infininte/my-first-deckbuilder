@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Game} from '../deckbuilder/game';
-import {CardType} from '../deckbuilder/cardType';
-import {Card} from '../deckbuilder/card';
+import {CardType} from '../deckbuilder/cards/cardType';
+import {Card} from '../deckbuilder/cards/card';
 
 @Component({
   selector: 'app-root',

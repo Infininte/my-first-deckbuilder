@@ -10,9 +10,9 @@ export class Game {
   private self: Game;
 
   constructor() {
-    this.bank = new Bank(20);
+    this.bank = new Bank(40);
     this.gameboard = new Gameboard();
-    this.couch = new Couch(4);
+    this.couch = new Couch(3, 1);
   }
 
   public start() {
@@ -31,12 +31,10 @@ export class Game {
   }
 
   public async baseGame() {
-    console.log('Preparing player loop');
     for (let i = 0; i < this.couch.players.length; i++) {
       if (this.isDone()) {
         break;
       }
-      console.log('Starting ' + this.couch.players[i].name);
       await this.couch.players[i].go(this);
     }
   }

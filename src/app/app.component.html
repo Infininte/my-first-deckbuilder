@@ -16,8 +16,15 @@
   Take two coins: {{countTakeTwoCoins()}} <br>
   Make an opponent drop a coin: {{countMakeAnOpponentDropACoin()}}
 <p>
+<p>
+  <div style="display: flex">
+    <div *ngFor="let player of game.couch.players" class="player">
+      {{player.name}}: {{player.wallet}} coins
+    </div>
+  </div>
+<p>
 
-  <span [hidden]="game.isDone()">
+  <span [hidden]="!game.isDone()">
     <h2>Game is done!</h2>
   </span>
 

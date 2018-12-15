@@ -1,6 +1,6 @@
 import {Card} from './card';
-import {Player} from './player';
-import {Game} from './game';
+import {Player} from '../player';
+import {Game} from '../game';
 import {CardType} from './cardType';
 
 export class TakeTwoCoins implements Card {

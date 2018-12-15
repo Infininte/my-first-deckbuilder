@@ -1,6 +1,6 @@
 import {Player} from './player';
-import {Card} from './card';
-import {TakeOneCoin} from './takeOneCoin';
+import {Card} from './cards/card';
+import {TakeOneCoin} from './cards/takeOneCoin';
 
 let player;
 describe('Player', () => {

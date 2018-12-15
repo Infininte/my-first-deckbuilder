@@ -1,3 +1,0 @@
-export enum CardType {
-  TAKE_ONE_COIN, TAKE_TWO_COINS, MAKE_AN_OPPONENT_DROP_A_COIN
-}

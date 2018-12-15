@@ -1,6 +1,6 @@
 import {Game} from './game';
-import {Card} from './card';
-import {TakeOneCoin} from './takeOneCoin';
+import {Card} from './cards/card';
+import {TakeOneCoin} from './cards/takeOneCoin';
 
 export class Player {
   id: number;
@@ -10,8 +10,10 @@ export class Player {
   discardPile: Array<Card> = [];
   hand: Array<Card> = [];
 
-  constructor() {
+  constructor(id?: number) {
+    this.id = id;
     this.name = 'Player ' + this.id;
+    this.wallet = 0;
     this.createStartingDeck();
     this.drawHand();
   }
@@ -24,12 +26,12 @@ export class Player {
   }
 
   public async go(game: Game) {
-    console.log(this.name);
+    console.log(this.name + ' is going');
     this.playHand(game);
     this.drawHand();
   }
 
-  private playHand(game: Game): void {
+  protected playHand(game: Game): void {
     this.hand.forEach((card) => {
       card.play(this, game);
       this.discardPile.push(card);
@@ -37,7 +39,7 @@ export class Player {
     this.hand = [];
   }
 
-  private drawHand(): void {
+  protected drawHand(): void {
     this.drawOne();
     this.drawOne();
   }
