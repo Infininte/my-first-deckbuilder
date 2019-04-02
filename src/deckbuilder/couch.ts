@@ -1,5 +1,6 @@
 import {Player} from './player';
 import {AiPlayer} from './ai-player';
+import {AiNNPlayer} from './ai-nn-player';
 
 export class Couch {
   players = new Array<Player>();
@@ -18,7 +19,7 @@ export class Couch {
       toReturn.push(new Player(toReturn.length + 1));
     }
     for (let i = 0; i < amountOfAi; i++) {
-      toReturn.push(new AiPlayer(toReturn.length + 1));
+      toReturn.push(new AiNNPlayer(toReturn.length + 1));
     }
     return toReturn;
   }
